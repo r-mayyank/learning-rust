@@ -14,11 +14,18 @@ fn main() {
 
     let greeting = String::from("hello world");
 
-    let sum : i32 = so_sum(5, 10);
-    println!("The sum is: {}", sum);
+    // let sum : i32 = so_sum(5, 10);
+    let a = 5;
+    let b = 10;
+    println!("The sum is: {}", so_sum(a, b));
+
+    let s1 = String::from("hello");
+    let s2 = s1;
+    println!("s1 is: {}", s1)
 
 }
 
 fn so_sum(a: i32, b: i32) -> i32 {
-    return a +b;
+    let c = a + b;
+    return c;
 }
