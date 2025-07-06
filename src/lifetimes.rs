@@ -1,31 +1,19 @@
-fn main() {
-    let is_male = true;
-    let is_legal = true;
+fn main () {
+    let larger;
+    let s1 = String::from("small");
+    {
+        let s2 = String::from("larger");
+        larger = larger(&s1, &s2);
+    }
+    println!("bigger is: {}", larger);
+}
 
-    if is_male {
-        println!("you are a male");
+fn larger<'a>(s1: &'a str, s2: &'a str) -> &'a str {
+    if s1.len() > s2.len() {
+        return s1;
     } else {
-        println!("you are not a male");
+        return s2;
     }
-
-    if is_male && is_legal {
-        println!("you are a legal male");
-    }
-
-    let greeting = String::from("hello world");
-
-    // let sum : i32 = so_sum(5, 10);
-    let a = 5;
-    let b = 10;
-    println!("The sum is: {}", so_sum(a, b));
-
-    let s1 = String::from("hello");
-    let s2 = s1;
-    println!("s1 is: {}", s1)
-
 }
 
-fn so_sum(a: i32, b: i32) -> i32 {
-    let c = a + b;
-    return c;
-}
+
